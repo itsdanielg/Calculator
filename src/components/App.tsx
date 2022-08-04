@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import NumberButton from './Button/NumberButton';
+import OperationButton from './Button/OperationButton';
+import SymbolButton from './Button/SymbolButton';
 import '../styles/App.css';
 
 function App() {
 
   const [output, setOutput] = useState(() => {
+    return "0";
+  })
+
+  const [internal, setInternal] = useState(() => {
     return 0;
   })
 
@@ -14,25 +21,25 @@ function App() {
           <h1>{output}</h1>
         </div>
         <div className="buttons">
-          <button className="symbols">AC</button>
-          <button className="symbols">+/-</button>
-          <button className="symbols">%</button>
-          <button className="operations">/</button>
-          <button className="numbers">7</button>
-          <button className="numbers">8</button>
-          <button className="numbers">9</button>
-          <button className="operations">x</button>
-          <button className="numbers">4</button>
-          <button className="numbers">5</button>
-          <button className="numbers">6</button>
-          <button className="operations">-</button>
-          <button className="numbers">1</button>
-          <button className="numbers">2</button>
-          <button className="numbers">3</button>
-          <button className="operations">+</button>
-          <button className="numbers zero">0</button>
-          <button className="numbers">.</button>
-          <button className="operations">=</button>
+          <SymbolButton input="AC" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <SymbolButton input="+/-" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <SymbolButton input="%" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="/" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <NumberButton input="7" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="8" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="9" prevOutput={output} setOutput={setOutput}/>
+          <OperationButton input="x" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <NumberButton input="4" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="5" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="6" prevOutput={output} setOutput={setOutput}/>
+          <OperationButton input="-" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <NumberButton input="1" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="2" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="3" prevOutput={output} setOutput={setOutput}/>
+          <OperationButton input="+" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <NumberButton input="0" prevOutput={output} setOutput={setOutput}/>
+          <NumberButton input="." prevOutput={output} setOutput={setOutput}/>
+          <OperationButton input="=" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
         </div>
       </div>
     </div>
