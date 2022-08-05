@@ -24,22 +24,22 @@ function App() {
           <SymbolButton input="AC" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
           <SymbolButton input="+/-" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
           <SymbolButton input="%" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
-          <OperationButton input="/" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="/" setOutput={setOutput}/>
           <NumberButton input="7" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="8" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="9" prevOutput={output} setOutput={setOutput}/>
-          <OperationButton input="x" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="x" setOutput={setOutput}/>
           <NumberButton input="4" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="5" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="6" prevOutput={output} setOutput={setOutput}/>
-          <OperationButton input="-" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="-" setOutput={setOutput}/>
           <NumberButton input="1" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="2" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="3" prevOutput={output} setOutput={setOutput}/>
-          <OperationButton input="+" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="+" setOutput={setOutput}/>
           <NumberButton input="0" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="." prevOutput={output} setOutput={setOutput}/>
-          <OperationButton input="=" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <OperationButton input="=" setOutput={setOutput}/>
         </div>
       </div>
     </div>

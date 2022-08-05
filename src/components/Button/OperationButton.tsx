@@ -1,17 +1,15 @@
-import Button from "./Button"
+import Button from "./Button";
+import Calculations from "../Calculations";
 
 interface OperationButtonProps{
-    input: string,
-    internal: number,
-    setInternal: any,
-    output: string,
+    input: string
     setOutput: any
 }
 
 function OperationButton(props: OperationButtonProps)  {
 
     const handleButton = () => {
-        props.setOutput(1);
+        props.setOutput(Calculations.inputOperation(props.input));
     }
 
     return (

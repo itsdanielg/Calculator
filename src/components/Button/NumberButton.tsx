@@ -1,5 +1,5 @@
-import Button from "./Button"
-import {inputNum} from "../Calculations"
+import Button from "./Button";
+import Calculations from "../Calculations";
 
 interface NumberButtonProps{
     input: string,
@@ -10,7 +10,7 @@ interface NumberButtonProps{
 function NumberButton(props: NumberButtonProps)  {
 
     const handleButton = () => {
-        props.setOutput(inputNum(props.input, props.prevOutput));
+        props.setOutput(Calculations.inputNum(props.input, props.prevOutput));
     }
 
     return (
