@@ -15,6 +15,27 @@ class Calculations {
         return this;
     }
 
+    static clearOutput(): string {
+        this.setFlag(true);
+        return "0";
+    }
+
+    static clearExpression(): string {
+        this.resetExpression();
+        return this.clearOutput();
+    }
+
+    static equals(): string {
+        let result = 0;
+        if (this.expression[1] === '+') result = this.expression[0] + this.expression[2];
+        else if (this.expression[1] === '-') result = this.expression[0] - this.expression[2];
+        else if (this.expression[1] === 'x') result = this.expression[0] * this.expression[2];
+        else result = this.expression[0] / this.expression[2];
+        this.expression = [result.toString()];
+        this.expressionIndex = 1;
+        return result.toString();
+    }
+
     static inputNum(input: string, output: string): string {
         let string = "";
         // Reset output if operation was pressed before
@@ -33,17 +54,6 @@ class Calculations {
         // Set expression to new output
         this.expression[this.expressionIndex] = parseInt(string+input);
         return string + input;
-    }
-    
-    static equals(): string {
-        let result = 0;
-        if (this.expression[1] === '+') result = this.expression[0] + this.expression[2];
-        else if (this.expression[1] === '-') result = this.expression[0] - this.expression[2];
-        else if (this.expression[1] === 'x') result = this.expression[0] * this.expression[2];
-        else result = this.expression[0] / this.expression[2];
-        this.expression = [result.toString()];
-        this.expressionIndex = 1;
-        return result.toString();
     }
 
     static inputOperation(operation: string): string {

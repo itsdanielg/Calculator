@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import Calculations from "../Calculations";
 import Button from "./Button"
 
 interface SymbolButtonProps{
     input: string,
-    internal: number,
-    setInternal: any,
     output: string,
     setOutput: any
 }
@@ -11,7 +11,8 @@ interface SymbolButtonProps{
 function SymbolButton(props: SymbolButtonProps)  {
 
     const handleButton = () => {
-        props.setOutput(1);
+        if (props.input === "+/-") props.setOutput(Calculations.clearOutput());
+        else return;
     }
 
     return (

@@ -3,15 +3,12 @@ import NumberButton from './Button/NumberButton';
 import OperationButton from './Button/OperationButton';
 import SymbolButton from './Button/SymbolButton';
 import '../styles/App.css';
+import ClearButton from './Button/ClearButton';
 
 function App() {
 
   const [output, setOutput] = useState(() => {
     return "0";
-  })
-
-  const [internal, setInternal] = useState(() => {
-    return 0;
   })
 
   return (
@@ -21,9 +18,9 @@ function App() {
           <h1>{output}</h1>
         </div>
         <div className="buttons">
-          <SymbolButton input="AC" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
-          <SymbolButton input="+/-" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
-          <SymbolButton input="%" output={output} setOutput={setOutput} internal={internal} setInternal={setInternal}/>
+          <ClearButton input="AC" output={output} setOutput={setOutput}/>
+          <SymbolButton input="+/-" output={output} setOutput={setOutput}/>
+          <SymbolButton input="%" output={output} setOutput={setOutput}/>
           <OperationButton input="/" setOutput={setOutput}/>
           <NumberButton input="7" prevOutput={output} setOutput={setOutput}/>
           <NumberButton input="8" prevOutput={output} setOutput={setOutput}/>
