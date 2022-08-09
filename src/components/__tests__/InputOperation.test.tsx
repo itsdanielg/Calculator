@@ -104,5 +104,18 @@ describe ("Addition/Subraction operation", () => {
         output = Calculations.equals();
         expect(output).toBe("8");
     })
+
+    it("3+5=-4=", () => {
+        output = "0";
+        Calculations.resetExpression();
+        output = Calculations.inputNum("3", output);
+        output = Calculations.inputOperation("+");
+        output = Calculations.inputNum("5", output);
+        output = Calculations.equals();
+        output = Calculations.inputOperation("-");
+        output = Calculations.inputNum("4", output);
+        output = Calculations.equals();
+        expect(output).toBe("4");
+    })
     
 })

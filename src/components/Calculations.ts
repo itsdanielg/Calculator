@@ -31,7 +31,7 @@ class Calculations {
         else if (this.expression[1] === '-') result = this.expression[0] - this.expression[2];
         else if (this.expression[1] === 'x') result = this.expression[0] * this.expression[2];
         else result = this.expression[0] / this.expression[2];
-        this.expression = [result.toString()];
+        this.expression = [result];
         this.expressionIndex = 1;
         return result.toString();
     }
@@ -66,7 +66,7 @@ class Calculations {
         }
         if (this.expression.length === 2) {
             this.expression[1] = operation;
-            return this.expression[0].toString
+            return this.expression[0].toString();
         }
         let result = this.equals();
         this.expression = [parseInt(result), operation];
