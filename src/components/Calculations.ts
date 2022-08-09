@@ -1,7 +1,7 @@
 class Calculations {
 
     static isNewFlag: boolean = false;
-    static expression: any = [];
+    static expression: any = [0];
     static expressionIndex = 0;
 
     static setFlag(flag: boolean) {
@@ -10,7 +10,7 @@ class Calculations {
     }
 
     static resetExpression() {
-        this.expression = [];
+        this.expression = [0];
         this.expressionIndex = 0;
         return this;
     }
@@ -72,6 +72,16 @@ class Calculations {
         this.expression = [parseInt(result), operation];
         this.expressionIndex = 2;
         return this.expression[0].toString();
+    }
+
+    static inputSign(): string {
+        this.expression[this.expressionIndex] = this.expression[this.expressionIndex]*-1;
+        return this.expression[this.expressionIndex].toString();
+    }
+
+    static inputPercentage(): string {
+        this.expression[this.expressionIndex] = this.expression[this.expressionIndex]*0.01;
+        return this.expression[this.expressionIndex].toString();
     }
 
 }

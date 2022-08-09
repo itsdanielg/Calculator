@@ -24,4 +24,20 @@ describe ("Clear, All Clear", () => {
         expect(output).toBe("0");
     })
 
+    it("25, +/-", () => {
+        output = "0";
+        Calculations.resetExpression();
+        output = Calculations.inputNum("25", output);
+        output = Calculations.inputSign();
+        expect(output).toBe("-25");
+    })
+
+    it("25, %", () => {
+        output = "0";
+        Calculations.resetExpression();
+        output = Calculations.inputNum("25", output);
+        output = Calculations.inputPercentage();
+        expect(output).toBe("0.25");
+    })
+
 })

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import NumberButton from './Button/NumberButton';
 import OperationButton from './Button/OperationButton';
 import SymbolButton from './Button/SymbolButton';
-import '../styles/App.css';
 import ClearButton from './Button/ClearButton';
+import '../styles/App.css';
 
 function App() {
 

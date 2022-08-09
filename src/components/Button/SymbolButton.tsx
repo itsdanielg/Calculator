@@ -11,8 +11,8 @@ interface SymbolButtonProps{
 function SymbolButton(props: SymbolButtonProps)  {
 
     const handleButton = () => {
-        if (props.input === "+/-") props.setOutput(Calculations.clearOutput());
-        else return;
+        if (props.input === "+/-") props.setOutput(Calculations.inputSign());
+        else props.setOutput(Calculations.inputPercentage());
     }
 
     return (
